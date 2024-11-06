@@ -20,11 +20,27 @@
         <p id="loading">Loading search...</p>
         <div id="search" hidden>
           <input id="search-input" type="search" />
-          <div id="sorting">Sort by: <button class="sort-button" onclick="sortResults('most-relevant')">most relevant</button> | <button class="sort-button" onclick="sortResults('oldest-first')">oldest first</button> | <button class="sort-button" onclick="sortResults('newest-first')">newest first</button> | <button class="sort-button" onclick="sortResults('most-popular')">most popular</button></div>
+          <form id="search-sort">
+            <input type="radio" name="sort" value="newest-first" id="search-sort--newest-first" autocomplete="off" checked>
+            <label for="search-sort--newest-first">newest first</label>
+            <input type="radio" name="sort" value="most-relevant" id="search-sort--most-relevant" autocomplete="off">
+            <label for="search-sort--most-relevant">most relevant</label>
+            <input type="radio" name="sort" value="most-popular" id="search-sort--most-popular" autocomplete="off">
+            <label for="search-sort--most-popular">most popular</label>
+            <input type="radio" name="sort" value="oldest-first" id="search-sort--oldest-first" autocomplete="off">
+            <label for="search-sort--oldest-first">oldest first</label>
+          </form>
           <div id="output"></div>
         </div>
         <div id="browse" hidden>
-          <div id="browse-sort">Sort by: <button class="sort-button-browse" onclick="sortResults('oldest-first-browse')">oldest first</button> | <button class="sort-button-browse" onclick="sortResults('newest-first-browse')">newest first</button> | <button class="sort-button" onclick="sortResults('most-popular-browse')">most popular</button></div>
+          <form id="browse-sort">
+            <input type="radio" name="sort" value="newest-first" id="browse-sort--newest-first" autocomplete="off" checked>
+            <label for="browse-sort--newest-first">newest first</label>
+            <input type="radio" name="sort" value="oldest-first" id="browse-sort--oldest-first" autocomplete="off">
+            <label for="browse-sort--oldest-first">oldest first</label>
+            <input type="radio" name="sort" value="most-popular" id="browse-sort--most-popular" autocomplete="off">
+            <label for="browse-sort--most-popular">most popular</label>
+          </form>
           <p id="paging">Page <input id="page-num" type="number" /> of <span id="page-total">...</span> </p>
           <div id="browse-output"></div>
         </div>

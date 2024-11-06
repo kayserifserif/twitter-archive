@@ -1,4 +1,5 @@
 let browseDocuments = [];
+let results = [];
 
 const loadingText = document.getElementById("loading");
 const searchSection = document.getElementById("search");
@@ -13,6 +14,24 @@ const searchInput = document.getElementById('search-input');
 
 const POST_TEMPLATE = document.querySelector(".search_item").cloneNode(true);
 POST_TEMPLATE.remove();
+
+const searchSortInputs = document.querySelectorAll("#search-sort input");
+searchSortInputs.forEach(input => {
+  const value = input.value;
+  input.addEventListener("change", () => {
+    setSearchSort(value);
+    renderResults();
+  });
+});
+
+const browseSortInputs = document.querySelectorAll("#browse-sort input");
+browseSortInputs.forEach(input => {
+  const value = input.value;
+  input.addEventListener("change", () => {
+    setBrowseSort(value);
+    renderBrowse();
+  });
+});
 
 const pageSize = 50;
 let pageMax = 1;
@@ -69,6 +88,29 @@ function setPaging() {
   document.getElementById('page-num').min = 1;
 }
 
+function setSearchSort(criterion) {
+  const sortFnc = getSortFnc(criterion);
+  results = results.sort(sortFnc);
+}
+
+function setBrowseSort(criterion) {
+  const sortFnc = getSortFnc(criterion);
+  browseDocuments = browseDocuments.sort(sortFnc);
+}
+
+function getSortFnc(criterion) {
+  if (criterion === "newest-first") {
+    return (a, b) => new Date(b.created_at) - new Date(a.created_at);
+  } else if (criterion === "oldest-first") {
+    return (a, b) => new Date(a.created_at) - new Date(b.created_at);
+  } else if (criterion === "most-relevant") {
+    return (a, b) => a.index - b.index;
+  } else if (criterion === "most-popular") {
+    return (a, b) => (+b.favorite_count + +b.retweet_count) - (+a.favorite_count + +a.retweet_count);
+  }
+  return () => 0;
+}
+
 // function sortResults(criterion) {
 //   if (criterion === 'newest-first') {
 //     results = results.sort(function(a,b){
@@ -114,7 +156,7 @@ function setPaging() {
 //   }
 // }
 
-function renderResults(results) {
+function renderResults() {
   const output = document.getElementById("output");
   output.innerHTML = "";
 
@@ -134,14 +176,14 @@ function renderResults(results) {
 }
 
 function onSearchChange(e) {
-  let results = index.search(e.target.value, { enrich: true });
+  results = index.search(e.target.value, { enrich: true });
   if (results.length > 0) {
     // limit search results to the top 100 by relevance
     results = results.slice(0,100);
     // preserve original search result order in the 'index' variable since that is ordered by relevance
     results = results[0].result.map((item, index) => { let result = item.doc; result.index = index; return result;});
   }
-  renderResults(results);
+  renderResults();
 }
 searchInput.addEventListener('input', onSearchChange);
 
