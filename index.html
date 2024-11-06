@@ -14,7 +14,7 @@
       <p>This is a page where you can search many of my tweets, get a link to an archived version, and view all the content in nice, threaded form where applicable. This does not include replies to other people in this archive, so this is just "standalone" tweets and threads.</p>
       <div class="tweet">
         <p id="tabs">
-          <button class="tab active" id="search-tab" onclick="searchTab()">Search</button><button class="tab" id="browse-tab" onclick="browseTab()">Browse</button>
+          <button class="tab active" id="search-tab">Search</button><button class="tab" id="browse-tab">Browse</button>
         </p>
         <hr class="hr">
         <p id="loading">Loading search...</p>
@@ -28,6 +28,7 @@
           <p id="paging">Page <input id="page-num" type="number" /> of <span id="page-total">...</span> </p>
           <div id="browse-output"></div>
         </div>
+        <article class="search_item"><div class="search_link"><a href="">link</a></div> <div class="search_text"></div><div class="search_time"></div><hr class="search_divider" /></article>
       </div>
       <p>This site was made with <a href="https://tinysubversions.com/twitter-archive/make-your-own/">this Twitter archiving tool</a>.</p>
     </div>
