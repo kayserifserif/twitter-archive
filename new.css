@@ -104,3 +104,7 @@ form > :last-child {
   flex-direction: column;
   gap: 0.5rem;
 }
+
+.post-footer {
+  text-align: right;
+}
