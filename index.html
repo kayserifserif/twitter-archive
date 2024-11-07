@@ -8,47 +8,45 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="wrapper">
-    <div class="flex-wrap">
-      <h1>Welcome to the @kayserifserif Twitter archive</h1>
-      <p>This is a page where you can search many of my tweets, get a link to an archived version, and view all the content in nice, threaded form where applicable. This does not include replies to other people in this archive, so this is just "standalone" tweets and threads.</p>
-      <div class="tweet">
-        <p id="tabs">
-          <button class="tab active" id="search-tab">Search</button><button class="tab" id="browse-tab">Browse</button>
-        </p>
-        <hr class="hr">
-        <p id="loading">Loading search...</p>
-        <div id="search" hidden>
-          <input id="search-input" type="search" />
-          <form id="search-sort">
-            <input type="radio" name="sort" value="newest-first" id="search-sort--newest-first" autocomplete="off" checked>
-            <label for="search-sort--newest-first">newest first</label>
-            <input type="radio" name="sort" value="most-relevant" id="search-sort--most-relevant" autocomplete="off">
-            <label for="search-sort--most-relevant">most relevant</label>
-            <input type="radio" name="sort" value="most-popular" id="search-sort--most-popular" autocomplete="off">
-            <label for="search-sort--most-popular">most popular</label>
-            <input type="radio" name="sort" value="oldest-first" id="search-sort--oldest-first" autocomplete="off">
-            <label for="search-sort--oldest-first">oldest first</label>
-          </form>
-          <div id="output"></div>
-        </div>
-        <div id="browse" hidden>
-          <form id="browse-sort">
-            <input type="radio" name="sort" value="newest-first" id="browse-sort--newest-first" autocomplete="off" checked>
-            <label for="browse-sort--newest-first">newest first</label>
-            <input type="radio" name="sort" value="oldest-first" id="browse-sort--oldest-first" autocomplete="off">
-            <label for="browse-sort--oldest-first">oldest first</label>
-            <input type="radio" name="sort" value="most-popular" id="browse-sort--most-popular" autocomplete="off">
-            <label for="browse-sort--most-popular">most popular</label>
-          </form>
-          <p id="paging">Page <input id="page-num" type="number" /> of <span id="page-total">...</span> </p>
-          <div id="browse-output"></div>
-        </div>
-        <article class="search_item"><div class="search_link"><a href="">link</a></div> <div class="search_text"></div><div class="search_time"></div><hr class="search_divider" /></article>
+  <main>
+    <h1>Welcome to the @kayserifserif Twitter archive</h1>
+    <p>This is a page where you can search many of my tweets, get a link to an archived version, and view all the content in nice, threaded form where applicable. This does not include replies to other people in this archive, so this is just "standalone" tweets and threads.</p>
+    <div class="tweet">
+      <p id="tabs">
+        <button class="tab active" id="search-tab">Search</button><button class="tab" id="browse-tab">Browse</button>
+      </p>
+      <hr class="hr">
+      <p id="loading">Loading search...</p>
+      <div id="search" hidden>
+        <input id="search-input" type="search" />
+        <form id="search-sort">
+          <input type="radio" name="sort" value="newest-first" id="search-sort--newest-first" autocomplete="off" checked>
+          <label for="search-sort--newest-first">newest first</label>
+          <input type="radio" name="sort" value="most-relevant" id="search-sort--most-relevant" autocomplete="off">
+          <label for="search-sort--most-relevant">most relevant</label>
+          <input type="radio" name="sort" value="most-popular" id="search-sort--most-popular" autocomplete="off">
+          <label for="search-sort--most-popular">most popular</label>
+          <input type="radio" name="sort" value="oldest-first" id="search-sort--oldest-first" autocomplete="off">
+          <label for="search-sort--oldest-first">oldest first</label>
+        </form>
+        <div id="output"></div>
       </div>
-      <p>This site was made with <a href="https://tinysubversions.com/twitter-archive/make-your-own/">this Twitter archiving tool</a>.</p>
+      <div id="browse" hidden>
+        <form id="browse-sort">
+          <input type="radio" name="sort" value="newest-first" id="browse-sort--newest-first" autocomplete="off" checked>
+          <label for="browse-sort--newest-first">newest first</label>
+          <input type="radio" name="sort" value="oldest-first" id="browse-sort--oldest-first" autocomplete="off">
+          <label for="browse-sort--oldest-first">oldest first</label>
+          <input type="radio" name="sort" value="most-popular" id="browse-sort--most-popular" autocomplete="off">
+          <label for="browse-sort--most-popular">most popular</label>
+        </form>
+        <p id="paging">Page <input id="page-num" type="number" /> of <span id="page-total">...</span> </p>
+        <div id="browse-output"></div>
+      </div>
+      <article class="search_item"><div class="search_link"><a href="">link</a></div> <div class="search_text"></div><div class="search_time"></div><hr class="search_divider" /></article>
     </div>
-  </div>
+    <p>This site was made with <a href="https://tinysubversions.com/twitter-archive/make-your-own/">this Twitter archiving tool</a>.</p>
+  </main>
 </body>
 <script src="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.7.31/dist/flexsearch.bundle.js"></script>
 <script src="app.js"></script>

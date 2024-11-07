@@ -23,13 +23,11 @@ body {
 .sort-button {
   font-size: 1.0em;
 }
-.wrapper {
-  display: block;
+main {
   max-width: 600px;
+  width: 100%;
   margin: 0 auto;
   word-wrap: break-word;
-}
-.flex-wrap {
   display: flex;
   flex-direction: column;
 }
