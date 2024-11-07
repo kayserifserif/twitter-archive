@@ -12,7 +12,7 @@ searchTab.addEventListener("click", () => activateSearch());
 
 const searchInput = document.getElementById('search-input');
 
-const POST_TEMPLATE = document.querySelector(".search_item");
+const POST_TEMPLATE = document.querySelector(".post");
 POST_TEMPLATE.remove();
 
 const searchSortInputs = document.querySelectorAll("#search-sort input");
@@ -121,10 +121,10 @@ function renderResults() {
     const element = POST_TEMPLATE.cloneNode(true);
     output.appendChild(element);
 
-    element.querySelector(".search_link a").href = `kayserifserif/status/${item.id_str}`;
-    // element.querySelector(".search_text").textContent = item.full_text;
-    element.querySelector(".search_text").innerHTML = item.full_text;
-    element.querySelector(".search_time").textContent = (new Date(item.created_at)).toLocaleString();
+    element.querySelector(".post-link").href = `kayserifserif/status/${item.id_str}`;
+    // element.querySelector(".post-content").textContent = item.full_text;
+    element.querySelector(".post-content").innerHTML = item.full_text;
+    element.querySelector(".post-date").textContent = (new Date(item.created_at)).toLocaleString();
   });
 
   if (results.length > 0) {
@@ -173,10 +173,10 @@ function renderBrowse() {
     const element = POST_TEMPLATE.cloneNode(true);
     output.appendChild(element);
 
-    element.querySelector(".search_link a").href = `kayserifserif/status/${item.id_str}`;
-    // element.querySelector(".search_text").textContent = item.full_text;
-    element.querySelector(".search_text").innerHTML = item.full_text;
-    element.querySelector(".search_time").textContent = (new Date(item.created_at)).toLocaleString();
+    element.querySelector(".post-link").href = `kayserifserif/status/${item.id_str}`;
+    // element.querySelector(".post-content").textContent = item.full_text;
+    element.querySelector(".post-content").innerHTML = item.full_text;
+    element.querySelector(".post-date").textContent = (new Date(item.created_at)).toLocaleString();
   })
 
   output.innerHTML += '<a href="#tabs">top &uarr;</a>';

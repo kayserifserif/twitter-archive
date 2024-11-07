@@ -7,22 +7,6 @@ body {
   font-size: 1.5em;
   width: 100%;
 }
-.search_time {
-  margin-top: 4px;
-}
-.search_text {
-  display: inline;
-}
-.search_link {
-  display: inline;
-}
-#sorting {
-  margin-top: 8px;
-  line-height: 1.7em;
-}
-.sort-button {
-  font-size: 1.0em;
-}
 main {
   max-width: 600px;
   width: 100%;
