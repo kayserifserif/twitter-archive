@@ -124,7 +124,7 @@ function renderResults() {
     element.querySelector(".post-link").href = `kayserifserif/status/${item.id_str}`;
     // element.querySelector(".post-content").textContent = item.full_text;
     element.querySelector(".post-content").innerHTML = item.full_text;
-    element.querySelector(".post-date").textContent = (new Date(item.created_at)).toLocaleString();
+    element.querySelector(".post-date").textContent = (new Date(item.created_at)).toLocaleDateString();
   });
 
   if (results.length > 0) {
@@ -176,7 +176,7 @@ function renderBrowse() {
     element.querySelector(".post-link").href = `kayserifserif/status/${item.id_str}`;
     // element.querySelector(".post-content").textContent = item.full_text;
     element.querySelector(".post-content").innerHTML = item.full_text;
-    element.querySelector(".post-date").textContent = (new Date(item.created_at)).toLocaleString();
+    element.querySelector(".post-date").textContent = (new Date(item.created_at)).toLocaleDateString();
   })
 
   output.innerHTML += '<a href="#tabs">top &uarr;</a>';
