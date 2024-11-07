@@ -111,51 +111,6 @@ function getSortFnc(criterion) {
   return () => 0;
 }
 
-// function sortResults(criterion) {
-//   if (criterion === 'newest-first') {
-//     results = results.sort(function(a,b){
-//       return new Date(b.created_at) - new Date(a.created_at);
-//     });
-//     renderResults();
-//   }
-//   if (criterion === 'oldest-first') {
-//     results = results.sort(function(a,b){
-//       return new Date(a.created_at) - new Date(b.created_at);
-//     });
-//     renderResults();
-//   }
-//   if (criterion === 'most-relevant') {
-//     results = results.sort(function(a,b){
-//       return a.index - b.index;
-//     });
-//     renderResults();
-//   }
-//   if (criterion === 'most-popular') {
-//     results = results.sort(function(a,b){
-//       return (+b.favorite_count + +b.retweet_count) - (+a.favorite_count + +a.retweet_count);
-//     });
-//     renderResults();
-//   }
-//   if (criterion === 'newest-first-browse') {
-//     browseDocuments = browseDocuments.sort(function(a,b){
-//       return new Date(b.created_at) - new Date(a.created_at);
-//     });
-//     renderBrowse();
-//   }
-//   if (criterion === 'oldest-first-browse') {
-//     browseDocuments = browseDocuments.sort(function(a,b){
-//       return new Date(a.created_at) - new Date(b.created_at);
-//     });
-//     renderBrowse();
-//   }
-//   if (criterion === 'most-popular-browse') {
-//     browseDocuments = browseDocuments.sort(function(a,b){
-//       return (+b.favorite_count + +b.retweet_count) - (+a.favorite_count + +a.retweet_count);
-//     });
-//     renderBrowse();
-//   }
-// }
-
 function renderResults() {
   const output = document.getElementById("output");
   output.innerHTML = "";
