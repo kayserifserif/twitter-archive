@@ -12,7 +12,7 @@ searchTab.addEventListener("click", () => activateSearch());
 
 const searchInput = document.getElementById('search-input');
 
-const POST_TEMPLATE = document.querySelector(".search_item").cloneNode(true);
+const POST_TEMPLATE = document.querySelector(".search_item");
 POST_TEMPLATE.remove();
 
 const searchSortInputs = document.querySelectorAll("#search-sort input");
