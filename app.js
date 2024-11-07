@@ -61,8 +61,8 @@ function processData(data) {
         retweet_count: doc.retweet_count
     })
   };
-  loadingText.hidden = true;
-  searchSection.hidden = false;
+
+  activateBrowse();
 }
 
 fetch("./documents.json")
@@ -73,6 +73,8 @@ fetch("./documents.json")
     browseDocuments = documents.sort(function(a,b){
       return new Date(b.created_at) - new Date(a.created_at);
     });
+
+    loadingText.hidden = true;
 
     setPaging();
 
